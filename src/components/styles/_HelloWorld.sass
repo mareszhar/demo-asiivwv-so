@@ -1,0 +1,13 @@
+// Here we need to reference the alias we set up in vite.config.js to access our GlobalStyles
+@use '@styles' as GlobalStyles
+  
+h1
+  color: GlobalStyles.$aquamarine // <- using a global variable
+
+// NOTE:
+// Unfortunately, our global styles are not automatically available in sass files. So, we have
+// to manually import them every time. But, the Vite setup I shared will save you from worrying about
+// constructing relative paths every time, and prevent any issues if you move your styling files to a
+// different location.
+// Also, unlike the compiler options from Vue projects built with the Vue CLI, there are no issues with
+// using the latest @use syntax instead of the deprecated @import syntax.
